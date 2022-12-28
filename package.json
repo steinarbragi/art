@@ -4,6 +4,9 @@
   "authors": [
     "Renaud ROHLINGER <https://twitter.com/onirenaud>"
   ],
+  "engines": {
+    "node": ">=18.12.1"
+  },
   "license": "MIT",
   "private": true,
   "dependencies": {
