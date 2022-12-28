@@ -6,17 +6,10 @@ import Noodles from '../components/canvas/Noodles'
 // WARNING ! errors might get obfuscated by using dynamic import.
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
-const Logo = dynamic(() => import('@/components/canvas/Logo'), { ssr: false })
 
 // Dom components go here
 export default function Page(props) {
-  return (
-    <Instructions>
-      This is a minimal starter for Nextjs + React-three-fiber and Threejs. Click on the{' '}
-      <span className='text-cyan-200'>atoms nucleus</span> to navigate to the{' '}
-      <span className='text-green-200'>/blob</span> page. OrbitControls are enabled by default.
-    </Instructions>
-  )
+  return
 }
 
 // Canvas components go here
@@ -24,5 +17,5 @@ export default function Page(props) {
 Page.canvas = (props) => <Noodles />
 
 export async function getStaticProps() {
-  return { props: { title: 'Index' } }
+  return { props: { title: 'STEINAR.io' } }
 }

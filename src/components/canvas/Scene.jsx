@@ -10,7 +10,7 @@ export default function Scene({ children, ...props }) {
       <Bg />
       <Suspense fallback={null}>
         {children}
-        <Caption>{`STEINAR.IO\n\nDEVELOPER`}</Caption>
+        <Caption>{`steinar.io\n\nDEVELOPER`}</Caption>
         <Rig />
       </Suspense>
     </Canvas>
