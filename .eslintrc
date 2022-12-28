@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "next",
+    "prettier"
+  ],
+  "plugins": [
+    "tailwindcss"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "no-console": "warn",
+    "no-var": "error"
+  }
+}
