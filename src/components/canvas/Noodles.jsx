@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import { useState, useMemo } from 'react'
 import { useThree } from '@react-three/fiber'
 import { useGLTF, Float } from '@react-three/drei'
+import { Text } from '@react-three/drei'
 import { LayerMaterial, Base, Depth, Fresnel, Noise } from 'lamina/vanilla'
 
 const colorA = new THREE.Color('#2032A5').convertSRGBToLinear()
@@ -38,8 +39,30 @@ function Noodle() {
   )
 }
 
-export default function Noodles() {
-  return Array.from({ length: 25 }, (_, i) => <Noodle key={i} />)
+function Caption({ children }) {
+  const { width } = useThree((state) => state.viewport)
+  return (
+    <Text
+      position={[0, 0, -5]}
+      lineHeight={0.8}
+      font="/Ki-Medium.ttf"
+      fontSize={width / 8}
+      material-toneMapped={false}
+      anchorX="center"
+      anchorY="middle">
+      {children}
+    </Text>
+  )
+}
+
+export default function Noodles({ caption }) {
+
+  return (
+    <>
+      <Caption>{caption}</Caption>
+      {Array.from({ length: 25 }, (_, i) => <Noodle key={i} />)}
+    </>
+  )
 }
 
 useGLTF.preload('/worm-transformed.glb')

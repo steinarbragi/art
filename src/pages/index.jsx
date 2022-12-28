@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic'
-import Instructions from '@/components/dom/Instructions'
 import Noodles from '../components/canvas/Noodles'
 
 // Dynamic import is used to prevent a payload when the website starts, that includes threejs, r3f etc..
@@ -14,7 +12,7 @@ export default function Page(props) {
 
 // Canvas components go here
 // It will receive same props as the Page component (from getStaticProps, etc.)
-Page.canvas = (props) => <Noodles />
+Page.canvas = (props) => <Noodles caption={`steinar.io\n\nDEVELOPER`} />
 
 export async function getStaticProps() {
   return { props: { title: 'STEINAR.io' } }
